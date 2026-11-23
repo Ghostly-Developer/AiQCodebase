@@ -1,0 +1,1436 @@
+{
+  "summary": {
+    "label": "fixed / vector",
+    "n": 50,
+    "n_unanswerable": 0,
+    "recall_at_1": 0.36,
+    "recall_at_5": 0.7,
+    "recall_at_10": 0.78,
+    "file_at_5": 0.88,
+    "mrr_at_10": 0.48952380952380947,
+    "hit_at_budget": 0.7,
+    "avg_context_tokens": 2003.32,
+    "avg_chunk_tokens": 372.3345132743363,
+    "chunks": 565,
+    "ci": {
+      "recall_at_5": [
+        0.58,
+        0.82
+      ],
+      "hit_at_budget": [
+        0.58,
+        0.82
+      ]
+    },
+    "keyword_accuracy": null,
+    "judge_score": null,
+    "cited_accuracy": null,
+    "false_refusal": null,
+    "refusal_accuracy": null,
+    "invalid_citations_per_answer": null,
+    "unsupported_ids_per_answer": null,
+    "seconds": 0.8104400634765625
+  },
+  "results": [
+    {
+      "id": "q01",
+      "category": "explain",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2016,
+      "top": [
+        "Dapper/SqlMapper.cs:L90-L140",
+        "Dapper/SqlMapper.cs:L45-L95",
+        "Dapper/SqlMapper.cs:L1-L53",
+        "Readme.md:L222-L250",
+        "Dapper/SqlMapper.cs:L136-L172"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q02",
+      "category": "explain",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2013,
+      "top": [
+        "Dapper/SqlMapper.cs:L45-L95",
+        "Dapper/SqlMapper.cs:L90-L140",
+        "Readme.md:L222-L250",
+        "Dapper.Rainbow/Database.cs:L475-L492",
+        "Dapper/SqlMapper.cs:L1168-L1204"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q03",
+      "category": "locate",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1999,
+      "top": [
+        "Dapper/SqlMapper.cs:L90-L140",
+        "Dapper/SqlMapper.cs:L45-L95",
+        "Dapper/SqlMapper.cs:L1-L53",
+        "Readme.md:L196-L206",
+        "Dapper/SqlMapper.CacheInfo.cs:L1-L19"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q04",
+      "category": "explain",
+      "answerable": true,
+      "rank": 4,
+      "file_rank": 3,
+      "in_context": true,
+      "context_tokens": 2014,
+      "top": [
+        "Dapper/SqlMapper.Settings.cs:L86-L108",
+        "Dapper/SqlMapper.Settings.cs:L53-L90",
+        "Dapper/SqlMapper.cs:L2163-L2196",
+        "Dapper/SqlMapper.cs:L2126-L2168",
+        "docs/index.md:L172-L208"
+      ],
+      "retriever_ranks": {
+        "vector": 4
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q05",
+      "category": "explain",
+      "answerable": true,
+      "rank": null,
+      "file_rank": null,
+      "in_context": false,
+      "context_tokens": 2019,
+      "top": [
+        "Readme.md:L39-L78",
+        "Readme.md:L244-L283",
+        "Readme.md:L438-L472",
+        "Readme.md:L274-L298",
+        "docs/index.md:L140-L179"
+      ],
+      "retriever_ranks": {
+        "vector": 35
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q06",
+      "category": "explain",
+      "answerable": true,
+      "rank": null,
+      "file_rank": 1,
+      "in_context": false,
+      "context_tokens": 1986,
+      "top": [
+        "Dapper/SqlMapper.cs:L1878-L1905",
+        "Dapper/SqlMapper.cs:L4277-L4308",
+        "Readme.md:L244-L283",
+        "Dapper/SqlMapper.cs:L2190-L2224",
+        "Dapper/SqlMapper.cs:L542-L575"
+      ],
+      "retriever_ranks": {
+        "vector": 24
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q07",
+      "category": "explain",
+      "answerable": true,
+      "rank": null,
+      "file_rank": null,
+      "in_context": false,
+      "context_tokens": 1995,
+      "top": [
+        "Dapper/SqlMapper.cs:L3111-L3146",
+        "Dapper/SqlMapper.cs:L965-L985",
+        "Dapper/SqlMapper.cs:L1016-L1036",
+        "Dapper/SqlMapper.cs:L1901-L1937",
+        "Readme.md:L366-L409"
+      ],
+      "retriever_ranks": {
+        "vector": null
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q08",
+      "category": "explain",
+      "answerable": true,
+      "rank": null,
+      "file_rank": null,
+      "in_context": false,
+      "context_tokens": 2003,
+      "top": [
+        "Readme.md:L366-L409",
+        "Dapper/SqlMapper.Settings.cs:L30-L64",
+        "Dapper/SqlMapper.cs:L2499-L2537",
+        "Dapper/SqlMapper.cs:L897-L917",
+        "Dapper/SqlMapper.Async.cs:L1232-L1254"
+      ],
+      "retriever_ranks": {
+        "vector": null
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q09",
+      "category": "explain",
+      "answerable": true,
+      "rank": 5,
+      "file_rank": 5,
+      "in_context": true,
+      "context_tokens": 1995,
+      "top": [
+        "Dapper/SqlMapper.LiteralToken.cs:L1-L32",
+        "Dapper/SqlMapper.cs:L2499-L2537",
+        "Dapper/SqlMapper.TypeHandler.cs:L77-L86",
+        "Dapper/SqlMapper.cs:L2917-L2948",
+        "Readme.md:L274-L298"
+      ],
+      "retriever_ranks": {
+        "vector": 5
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q10",
+      "category": "explain",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 2,
+      "in_context": true,
+      "context_tokens": 2009,
+      "top": [
+        "Readme.md:L274-L298",
+        "Dapper/SqlMapper.cs:L2499-L2537",
+        "Dapper.SqlBuilder/SqlBuilder.cs:L83-L128",
+        "Dapper/SqlMapper.Async.cs:L434-L464",
+        "Dapper/SqlMapper.cs:L2059-L2099"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q11",
+      "category": "debug",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2024,
+      "top": [
+        "Dapper/SqlMapper.cs:L2018-L2064",
+        "Dapper/SqlMapper.GridReader.cs:L257-L285",
+        "Dapper/SqlMapper.cs:L1994-L2025",
+        "docs/index.md:L73-L101",
+        "Dapper/SqlMapper.cs:L1831-L1881"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q12",
+      "category": "api",
+      "answerable": true,
+      "rank": null,
+      "file_rank": 1,
+      "in_context": false,
+      "context_tokens": 1988,
+      "top": [
+        "Dapper/SqlMapper.cs:L2018-L2064",
+        "Dapper/SqlMapper.Async.cs:L919-L933",
+        "Dapper/SqlMapper.GridReader.cs:L257-L285",
+        "Dapper/SqlMapper.cs:L1831-L1881",
+        "docs/index.md:L73-L101"
+      ],
+      "retriever_ranks": {
+        "vector": 28
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q13",
+      "category": "api",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1994,
+      "top": [
+        "Dapper/CommandFlags.cs:L1-L28",
+        "Dapper/CommandDefinition.cs:L49-L84",
+        "Dapper/PublicAPI.Shipped.txt:L19-L44",
+        "Dapper/CommandDefinition.cs:L82-L110",
+        "Dapper/SqlMapper.cs:L3076-L3116"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q14",
+      "category": "api",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2012,
+      "top": [
+        "Dapper/CommandDefinition.cs:L82-L110",
+        "Dapper/CommandDefinition.cs:L105-L149",
+        "Dapper/CommandDefinition.cs:L49-L84",
+        "Dapper/CommandDefinition.cs:L1-L56",
+        "Dapper/CommandDefinition.cs:L144-L177"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q15",
+      "category": "explain",
+      "answerable": true,
+      "rank": null,
+      "file_rank": null,
+      "in_context": false,
+      "context_tokens": 1995,
+      "top": [
+        "Dapper/SqlMapper.Async.cs:L598-L631",
+        "Dapper/SqlMapper.Async.cs:L1077-L1111",
+        "Dapper/SqlMapper.Async.cs:L244-L262",
+        "Dapper/SqlMapper.Async.cs:L382-L413",
+        "Dapper/SqlMapper.Async.cs:L855-L870"
+      ],
+      "retriever_ranks": {
+        "vector": null
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q16",
+      "category": "explain",
+      "answerable": true,
+      "rank": 5,
+      "file_rank": 5,
+      "in_context": true,
+      "context_tokens": 1996,
+      "top": [
+        "Dapper/SqlMapper.Settings.cs:L30-L64",
+        "Dapper/DynamicParameters.cs:L167-L203",
+        "Dapper/DynamicParameters.cs:L227-L268",
+        "Dapper/SqlMapper.Settings.cs:L105-L133",
+        "Dapper/CommandDefinition.cs:L144-L177"
+      ],
+      "retriever_ranks": {
+        "vector": 5
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q17",
+      "category": "explain",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2013,
+      "top": [
+        "Dapper/SqlMapper.Settings.cs:L30-L64",
+        "Dapper/SqlMapper.Settings.cs:L1-L34",
+        "docs/index.md:L223-L259",
+        "Dapper/SqlMapper.cs:L1330-L1358",
+        "Dapper/SqlMapper.Async.cs:L489-L519"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q18",
+      "category": "explain",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2030,
+      "top": [
+        "Dapper/SqlMapper.Settings.cs:L30-L64",
+        "Dapper/SqlMapper.Async.cs:L489-L519",
+        "docs/index.md:L223-L259",
+        "Dapper/SqlMapper.cs:L1330-L1358",
+        "Dapper/SqlMapper.cs:L1254-L1301"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q19",
+      "category": "config",
+      "answerable": true,
+      "rank": 8,
+      "file_rank": 1,
+      "in_context": false,
+      "context_tokens": 2018,
+      "top": [
+        "Dapper/DefaultTypeMap.cs:L153-L175",
+        "Dapper/DefaultTypeMap.cs:L203-L242",
+        "Dapper/SqlMapper.cs:L1741-L1768",
+        "Dapper/SqlMapper.DapperTable.cs:L1-L40",
+        "Dapper/DefaultTypeMap.cs:L122-L158"
+      ],
+      "retriever_ranks": {
+        "vector": 8
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q20",
+      "category": "explain",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2006,
+      "top": [
+        "Dapper/DefaultTypeMap.cs:L153-L175",
+        "Dapper/DefaultTypeMap.cs:L203-L242",
+        "Dapper/DefaultTypeMap.cs:L173-L209",
+        "Dapper/SqlMapper.cs:L2633-L2666",
+        "Dapper/SqlMapper.cs:L3279-L3315"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q21",
+      "category": "api",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2011,
+      "top": [
+        "Dapper/DefaultTypeMap.cs:L63-L98",
+        "Dapper/ExplicitConstructorAttribute.cs:L1-L15",
+        "Dapper/SqlMapper.cs:L3584-L3617",
+        "Dapper/DefaultTypeMap.cs:L122-L158",
+        "Dapper/SqlMapper.TypeDeserializerCache.cs:L79-L121"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q22",
+      "category": "api",
+      "answerable": true,
+      "rank": 5,
+      "file_rank": 5,
+      "in_context": true,
+      "context_tokens": 2015,
+      "top": [
+        "Dapper/DefaultTypeMap.cs:L153-L175",
+        "Dapper/SqlMapper.ITypeMap.cs:L36-L46",
+        "Dapper/SimpleMemberMap.cs:L1-L39",
+        "Dapper/DefaultTypeMap.cs:L122-L158",
+        "Dapper/CustomPropertyTypeMap.cs:L1-L41"
+      ],
+      "retriever_ranks": {
+        "vector": 5
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q23",
+      "category": "config",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1995,
+      "top": [
+        "Dapper/DbString.cs:L52-L95",
+        "Dapper/DbString.cs:L1-L60",
+        "Dapper/DbString.cs:L89-L106",
+        "Dapper/SqlMapper.DapperTable.cs:L37-L49",
+        "Dapper/DynamicParameters.cs:L293-L330"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q24",
+      "category": "debug",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1989,
+      "top": [
+        "Dapper/DbString.cs:L89-L106",
+        "Dapper/DbString.cs:L52-L95",
+        "Dapper/SqlMapper.DapperTable.cs:L37-L49",
+        "Dapper/SqlMapper.DapperRow.cs:L189-L238",
+        "Dapper/DbString.cs:L1-L60"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q25",
+      "category": "explain",
+      "answerable": true,
+      "rank": null,
+      "file_rank": 3,
+      "in_context": false,
+      "context_tokens": 2001,
+      "top": [
+        "Dapper/SqlMapper.cs:L455-L484",
+        "Readme.md:L244-L283",
+        "Dapper/DbString.cs:L1-L60",
+        "Dapper/SqlMapper.TypeHandler.cs:L77-L86",
+        "Dapper/DynamicParameters.cs:L325-L350"
+      ],
+      "retriever_ranks": {
+        "vector": 18
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q26",
+      "category": "explain",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1990,
+      "top": [
+        "Dapper/DynamicParameters.cs:L197-L233",
+        "Dapper/DynamicParameters.cs:L109-L150",
+        "Dapper/DynamicParameters.cs:L293-L330",
+        "Dapper/DynamicParameters.cs:L469-L506",
+        "Dapper/DynamicParameters.cs:L438-L473"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q27",
+      "category": "debug",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2025,
+      "top": [
+        "Dapper/DynamicParameters.cs:L325-L350",
+        "Dapper/SqlMapper.GridReader.cs:L141-L174",
+        "Dapper/SqlMapper.cs:L3142-L3178",
+        "Dapper/SqlMapper.TypeHandler.cs:L77-L86",
+        "Dapper/SqlMapper.GridReader.Async.cs:L51-L83"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q28",
+      "category": "api",
+      "answerable": true,
+      "rank": 8,
+      "file_rank": 1,
+      "in_context": false,
+      "context_tokens": 2003,
+      "top": [
+        "Dapper/DynamicParameters.cs:L227-L268",
+        "Dapper/DynamicParameters.cs:L469-L506",
+        "Dapper/DynamicParameters.cs:L438-L473",
+        "Dapper/DynamicParameters.ParamInfo.cs:L1-L24",
+        "Dapper/DynamicParameters.cs:L197-L233"
+      ],
+      "retriever_ranks": {
+        "vector": 8
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q29",
+      "category": "debug",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1992,
+      "top": [
+        "Dapper/SqlMapper.GridReader.cs:L171-L198",
+        "Readme.md:L187-L197",
+        "Dapper/SqlMapper.cs:L1330-L1358",
+        "Dapper/SqlMapper.Async.cs:L489-L519",
+        "Readme.md:L178-L188"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q30",
+      "category": "debug",
+      "answerable": true,
+      "rank": 7,
+      "file_rank": 1,
+      "in_context": false,
+      "context_tokens": 2013,
+      "top": [
+        "Dapper/SqlMapper.Async.cs:L410-L439",
+        "Dapper/SqlMapper.cs:L1230-L1259",
+        "Dapper/SqlMapper.Async.cs:L1-L32",
+        "Dapper/SqlMapper.Async.cs:L434-L464",
+        "Dapper/WrappedReader.cs:L211-L250"
+      ],
+      "retriever_ranks": {
+        "vector": 7
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q31",
+      "category": "explain",
+      "answerable": true,
+      "rank": 5,
+      "file_rank": 5,
+      "in_context": true,
+      "context_tokens": 1993,
+      "top": [
+        "Dapper/CommandFlags.cs:L1-L28",
+        "Dapper/CommandDefinition.cs:L49-L84",
+        "Readme.md:L127-L170",
+        "Dapper/DynamicParameters.cs:L167-L203",
+        "Dapper/SqlMapper.Async.cs:L534-L579"
+      ],
+      "retriever_ranks": {
+        "vector": 5
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q32",
+      "category": "debug",
+      "answerable": true,
+      "rank": null,
+      "file_rank": 7,
+      "in_context": false,
+      "context_tokens": 1996,
+      "top": [
+        "Readme.md:L244-L283",
+        "Readme.md:L69-L134",
+        "Dapper.Rainbow/Database.Async.cs:L189-L211",
+        "Dapper/DynamicParameters.cs:L1-L43",
+        "Readme.md:L292-L328"
+      ],
+      "retriever_ranks": {
+        "vector": null
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q33",
+      "category": "debug",
+      "answerable": true,
+      "rank": 5,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2004,
+      "top": [
+        "Dapper/SqlMapper.cs:L3476-L3523",
+        "Dapper/SqlMapper.TypeHandler.cs:L77-L86",
+        "Dapper/SqlMapper.DapperRow.cs:L43-L89",
+        "Dapper/SqlMapper.cs:L3584-L3617",
+        "Dapper/SqlMapper.cs:L2578-L2611"
+      ],
+      "retriever_ranks": {
+        "vector": 5
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q34",
+      "category": "debug",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2013,
+      "top": [
+        "Dapper/SqlMapper.cs:L1935-L1971",
+        "Dapper/SqlMapper.cs:L1901-L1937",
+        "Dapper/SqlMapper.cs:L2633-L2666",
+        "Readme.md:L244-L283",
+        "docs/index.md:L73-L101"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q35",
+      "category": "explain",
+      "answerable": true,
+      "rank": 2,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2015,
+      "top": [
+        "Dapper/SqlMapper.cs:L2633-L2666",
+        "Dapper/SqlMapper.cs:L542-L575",
+        "Dapper/SqlMapper.Async.cs:L1001-L1037",
+        "Dapper/SqlMapper.cs:L2323-L2347",
+        "Dapper/SqlMapper.cs:L2342-L2379"
+      ],
+      "retriever_ranks": {
+        "vector": 2
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q36",
+      "category": "config",
+      "answerable": true,
+      "rank": 10,
+      "file_rank": 1,
+      "in_context": false,
+      "context_tokens": 1991,
+      "top": [
+        "Dapper/SqlMapper.cs:L455-L484",
+        "Dapper/DynamicParameters.ParamInfo.cs:L1-L24",
+        "Dapper/SqlMapper.cs:L286-L321",
+        "Dapper/SqlMapper.cs:L3111-L3146",
+        "Dapper/DynamicParameters.cs:L109-L150"
+      ],
+      "retriever_ranks": {
+        "vector": 10
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q37",
+      "category": "api",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1999,
+      "top": [
+        "Dapper/XmlHandlers.cs:L1-L39",
+        "Dapper/SqlMapper.TypeHandler.cs:L42-L81",
+        "Dapper/SqlMapper.cs:L481-L515",
+        "Dapper/SqlMapper.cs:L427-L459",
+        "Dapper.EntityFramework/Handlers.cs:L1-L17"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q38",
+      "category": "api",
+      "answerable": true,
+      "rank": null,
+      "file_rank": 2,
+      "in_context": false,
+      "context_tokens": 2009,
+      "top": [
+        "Dapper/SqlMapper.cs:L353-L376",
+        "Dapper/SqlMapper.TypeHandler.cs:L42-L81",
+        "Dapper/SqlMapper.cs:L427-L459",
+        "Dapper/SqlMapper.cs:L373-L404",
+        "Dapper/SqlMapper.cs:L481-L515"
+      ],
+      "retriever_ranks": {
+        "vector": 11
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q39",
+      "category": "api",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1989,
+      "top": [
+        "Dapper/SqlMapper.cs:L4250-L4280",
+        "Dapper/TableValuedParameter.cs:L1-L44",
+        "Dapper/TableValuedParameter.cs:L38-L50",
+        "Dapper/SqlMapper.cs:L4277-L4308",
+        "Dapper/DataTableHandler.cs:L1-L17"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q40",
+      "category": "explain",
+      "answerable": true,
+      "rank": 5,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2002,
+      "top": [
+        "Dapper.Rainbow/Database.cs:L72-L108",
+        "Dapper.Rainbow/SqlCompactDatabase.cs:L38-L71",
+        "Dapper.Rainbow/Database.Async.cs:L36-L69",
+        "Dapper.Rainbow/Database.cs:L103-L141",
+        "Dapper.Rainbow/Database.cs:L35-L76"
+      ],
+      "retriever_ranks": {
+        "vector": 5
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q41",
+      "category": "explain",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2013,
+      "top": [
+        "Dapper.Rainbow/Database.cs:L276-L332",
+        "Dapper.Rainbow/Database.cs:L35-L76",
+        "Dapper.Rainbow/Database.cs:L321-L363",
+        "Dapper.Rainbow/Database.cs:L166-L211",
+        "Dapper.Rainbow/Database.cs:L135-L169"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q42",
+      "category": "api",
+      "answerable": true,
+      "rank": null,
+      "file_rank": 9,
+      "in_context": false,
+      "context_tokens": 1991,
+      "top": [
+        "Dapper.Rainbow/IgnorePropertyAttribute.cs:L1-L25",
+        "Dapper.Rainbow/Snapshotter.cs:L113-L148",
+        "Dapper.Rainbow/Snapshotter.cs:L144-L185",
+        "docs/index.md:L140-L179",
+        "Dapper.Rainbow/Snapshotter.cs:L46-L90"
+      ],
+      "retriever_ranks": {
+        "vector": null
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q43",
+      "category": "api",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2012,
+      "top": [
+        "Dapper.Rainbow/Snapshotter.cs:L46-L90",
+        "Dapper.Rainbow/Snapshotter.cs:L113-L148",
+        "Dapper/DefaultTypeMap.cs:L153-L175",
+        "Dapper.Rainbow/Snapshotter.cs:L144-L185",
+        "Dapper.Rainbow/Snapshotter.cs:L84-L117"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q44",
+      "category": "explain",
+      "answerable": true,
+      "rank": 5,
+      "file_rank": 4,
+      "in_context": true,
+      "context_tokens": 1996,
+      "top": [
+        "Dapper.SqlBuilder/Readme.md:L91-L126",
+        "Dapper.SqlBuilder/Readme.md:L49-L104",
+        "Dapper.SqlBuilder/Readme.md:L17-L56",
+        "Dapper.SqlBuilder/SqlBuilder.cs:L46-L91",
+        "Dapper.SqlBuilder/SqlBuilder.cs:L125-L152"
+      ],
+      "retriever_ranks": {
+        "vector": 5
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q45",
+      "category": "api",
+      "answerable": true,
+      "rank": 3,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1995,
+      "top": [
+        "Dapper.SqlBuilder/SqlBuilder.cs:L83-L128",
+        "Dapper.SqlBuilder/Readme.md:L91-L126",
+        "Dapper.SqlBuilder/SqlBuilder.cs:L46-L91",
+        "Dapper.SqlBuilder/PublicAPI.Shipped.txt:L17-L22",
+        "Dapper.SqlBuilder/Readme.md:L17-L56"
+      ],
+      "retriever_ranks": {
+        "vector": 3
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q46",
+      "category": "api",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1994,
+      "top": [
+        "Dapper.ProviderTools/DbExceptionExtensions.cs:L1-L47",
+        "Dapper.ProviderTools/DbExceptionExtensions.cs:L40-L64",
+        "Dapper/SqlDataRecordListTVPParameter.cs:L63-L97",
+        "Dapper/WrappedReader.cs:L38-L55",
+        "Dapper/PublicAPI.Shipped.txt:L331-L335"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q47",
+      "category": "docs",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1992,
+      "top": [
+        "Readme.md:L438-L472",
+        "Readme.md:L274-L298",
+        "Dapper.Rainbow/readme.md:L70-L117",
+        "Dapper/SqlMapper.cs:L2499-L2537",
+        "Dapper/SqlMapper.Async.cs:L275-L294"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q48",
+      "category": "docs",
+      "answerable": true,
+      "rank": null,
+      "file_rank": 1,
+      "in_context": false,
+      "context_tokens": 2006,
+      "top": [
+        "Readme.md:L187-L197",
+        "Dapper.Rainbow/Database.cs:L457-L481",
+        "Readme.md:L178-L188",
+        "Readme.md:L69-L134",
+        "Dapper.ProviderTools/BulkCopy.cs:L127-L153"
+      ],
+      "retriever_ranks": {
+        "vector": null
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q49",
+      "category": "docs",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 2004,
+      "top": [
+        "Readme.md:L438-L472",
+        "Dapper/DynamicParameters.cs:L262-L295",
+        "Dapper/SqlMapper.cs:L2578-L2611",
+        "Readme.md:L274-L298",
+        "Dapper.SqlBuilder/SqlBuilder.cs:L83-L128"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    },
+    {
+      "id": "q50",
+      "category": "docs",
+      "answerable": true,
+      "rank": 1,
+      "file_rank": 1,
+      "in_context": true,
+      "context_tokens": 1993,
+      "top": [
+        "Readme.md:L409-L451",
+        "Dapper/SqlMapper.IDataReader.cs:L130-L159",
+        "Dapper/SqlMapper.GridReader.cs:L318-L340",
+        "Dapper/SqlMapper.GridReader.cs:L113-L147",
+        "Dapper.Rainbow/Database.cs:L428-L446"
+      ],
+      "retriever_ranks": {
+        "vector": 1
+      },
+      "answer": null,
+      "keyword_correct": null,
+      "judge_verdict": null,
+      "judge_reason": null,
+      "judge_score": null,
+      "cited_evidence": null,
+      "abstained": null,
+      "invalid_citations": null,
+      "unsupported_identifiers": []
+    }
+  ]
+}

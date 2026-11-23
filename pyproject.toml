@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "askcode"
+version = "0.1.0"
+description = "Ask My Codebase: a RAG assistant that answers questions about a repo with file:line citations"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "typer>=0.12",
+    "rich>=13",
+    "fastembed>=0.9",     # local ONNX embeddings + cross-encoder reranker
+    "google-genai>=1.0",  # Gemini answers + optional Gemini embeddings
+    "groq>=0.11",         # Groq-hosted open models for answers
+    "tree-sitter-language-pack>=0.7",  # real parsers for the `ast` chunker
+    "fastapi>=0.110",     # web UI
+    "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+pgvector = ["psycopg[binary]>=3.2", "pgvector>=0.3"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+askcode = "askcode.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+askcode = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

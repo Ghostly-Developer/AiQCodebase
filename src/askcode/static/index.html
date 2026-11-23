@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask My Codebase</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --text: #1d1d1b; --muted: #6b6b66; --border: #e2e1dc;
+    --accent: #2f5fd0; --accent-soft: #e8eefc; --warn: #9a5b00; --warn-bg: #fff4e0; --code: #f1f0ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161615; --panel: #1f1f1d; --text: #ecebe6; --muted: #9b9a94; --border: #33322f;
+      --accent: #8fb0ff; --accent-soft: #23304f; --warn: #ffc56b; --warn-bg: #3a2c12; --code: #262624;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; background: var(--panel); border-bottom: 1px solid var(--border);
+           padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+  header h1 { font-size: 16px; margin: 0 8px 0 0; }
+  header label { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  select, input[type=text], textarea, button { font: inherit; color: var(--text); background: var(--panel);
+           border: 1px solid var(--border); border-radius: 6px; }
+  select { padding: 4px 6px; }
+  main { max-width: 900px; margin: 0 auto; padding: 16px 16px 140px; }
+  .turn { margin: 18px 0; }
+  .q { font-weight: 600; }
+  .q .standalone { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
+  .a { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-top: 8px;
+       overflow-wrap: anywhere; }
+  .a p { margin: 0 0 8px; }
+  code { background: var(--code); padding: 1px 4px; border-radius: 4px; font-size: 13px; }
+  pre { background: var(--code); padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+  pre code { background: none; padding: 0; }
+  a.cite { text-decoration: none; background: var(--accent-soft); color: var(--accent); border-radius: 4px;
+           padding: 0 4px; font-size: 12px; font-weight: 600; }
+  .notes { margin-top: 10px; font-size: 13px; }
+  .notes a { color: var(--accent); }
+  .warn { background: var(--warn-bg); color: var(--warn); border-radius: 6px; padding: 6px 10px; margin-top: 8px; font-size: 13px; }
+  details.src { border: 1px solid var(--border); border-radius: 6px; margin-top: 6px; background: var(--panel); }
+  details.src summary { cursor: pointer; padding: 6px 10px; font-size: 13px; color: var(--muted); }
+  details.src pre { margin: 0; border-radius: 0 0 6px 6px; max-height: 360px; }
+  .ln { color: var(--muted); user-select: none; display: inline-block; min-width: 3.5em; }
+  footer { position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg); border-top: 1px solid var(--border); padding: 10px 16px; }
+  form { max-width: 900px; margin: 0 auto; display: flex; gap: 8px; }
+  textarea { flex: 1; min-width: 0; padding: 8px 10px; resize: none; height: 44px; }
+  button { padding: 0 16px; background: var(--accent); color: var(--panel); border: none; cursor: pointer; font-weight: 600; }
+  button:disabled { opacity: .5; cursor: default; }
+  .hint { color: var(--muted); font-size: 13px; text-align: center; margin-top: 40px; }
+  .model { font-size: 12px; color: var(--muted); margin-top: 6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ask My Codebase</h1>
+  <label>Index <select id="index"></select></label>
+  <label>Search <select id="mode"><option>hybrid</option><option>vector</option><option>keyword</option></select></label>
+  <label><input type="checkbox" id="expand" checked> small-to-big</label>
+  <label><input type="checkbox" id="rewrite"> query rewrite</label>
+  <label><input type="checkbox" id="rerank"> rerank</label>
+  <label>LLM <select id="llm"><option value="">auto</option><option>google</option><option>groq</option></select></label>
+  <button id="clear" type="button" style="background:none;color:var(--muted);border:1px solid var(--border);padding:3px 10px">New chat</button>
+</header>
+<main id="log"><p class="hint">Ask a question about the indexed code. Follow-up questions use the conversation.</p></main>
+<footer>
+  <form id="f">
+    <textarea id="q" placeholder="e.g. How does Dapper decide whether SQL is a stored procedure?" required></textarea>
+    <button id="send">Ask</button>
+  </form>
+</footer>
+<script>
+const $ = (id) => document.getElementById(id);
+let history = [];
+
+function esc(s) { return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function md(text) {
+  // tiny markdown: fenced code, inline code, bold, paragraphs, list items
+  const parts = text.split(/```[a-zA-Z]*\n?/);
+  return parts.map((p, i) => {
+    if (i % 2) return `<pre><code>${esc(p)}</code></pre>`;
+    return esc(p).split(/\n{2,}/).map(par => {
+      let h = par.replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+                 .replace(/^\s*[-*] /gm, "• ").replace(/\n/g, "<br>");
+      return h.trim() ? `<p>${h}</p>` : "";
+    }).join("");
+  }).join("");
+}
+
+function linkCites(html, notes, turnId) {
+  const byN = Object.fromEntries(notes.map(n => [n.n, n]));
+  return html.replace(/\[(\d+)\]/g, (m, n) => {
+    const note = byN[n];
+    if (!note) return m;
+    const href = note.url || `#${turnId}-src`;
+    return `<a class="cite" href="${href}" ${note.url ? 'target="_blank" rel="noopener"' : ""} title="${esc(note.ref)}">${n}</a>`;
+  });
+}
+
+function sourceHtml(s) {
+  const lines = s.text.split("\n").map((l, i) => `<span class="ln">${s.start_line + i}</span>${esc(l)}`).join("\n");
+  const title = `${esc(s.id)} · ${esc(s.path)}:${s.start_line}-${s.end_line}${s.symbol ? " · " + esc(s.symbol) : ""}`;
+  const link = s.url ? ` · <a href="${s.url}" target="_blank" rel="noopener">open</a>` : "";
+  return `<details class="src"><summary>${title}${link}</summary><pre><code>${lines}</code></pre></details>`;
+}
+
+async function loadIndexes() {
+  const r = await fetch("/api/indexes");
+  const list = await r.json();
+  $("index").innerHTML = list.map(i => `<option value="${esc(i.name)}">${esc(i.name)} (${i.chunker}, ${i.chunks})</option>`).join("")
+    || "<option value=''>no indexes - run askcode index</option>";
+  try { const saved = localStorage.getItem("askcode.index"); if (saved) $("index").value = saved; } catch (e) {}
+}
+
+async function ask(question) {
+  const turnId = "t" + Date.now();
+  const turn = document.createElement("div");
+  turn.className = "turn"; turn.id = turnId;
+  turn.innerHTML = `<div class="q">${esc(question)}<span class="standalone"></span></div><div class="a"><p>…</p></div><div id="${turnId}-src"></div>`;
+  document.querySelector(".hint")?.remove();
+  $("log").appendChild(turn);
+  turn.scrollIntoView({behavior: "smooth", block: "end"});
+  const ansEl = turn.querySelector(".a");
+  const body = {
+    index: $("index").value, question, history, mode: $("mode").value, expand: $("expand").checked,
+    rewrite: $("rewrite").checked, rerank: $("rerank").checked, llm: $("llm").value || null,
+  };
+  const resp = await fetch("/api/ask", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+  if (!resp.ok) { ansEl.innerHTML = `<div class="warn">${esc((await resp.json()).detail || resp.statusText)}</div>`; return; }
+  const reader = resp.body.getReader(); const dec = new TextDecoder();
+  let buf = "", raw = "";
+  while (true) {
+    const {value, done} = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, {stream: true});
+    let i;
+    while ((i = buf.indexOf("\n\n")) >= 0) {
+      const line = buf.slice(0, i); buf = buf.slice(i + 2);
+      if (!line.startsWith("data: ")) continue;
+      const ev = JSON.parse(line.slice(6));
+      if (ev.type === "sources") {
+        if (ev.standalone_question && ev.standalone_question !== question)
+          turn.querySelector(".standalone").textContent = "searched as: " + ev.standalone_question;
+        $(`${turnId}-src`).innerHTML = ev.sources.map(sourceHtml).join("");
+      } else if (ev.type === "token") {
+        raw += ev.text; ansEl.innerHTML = md(raw);
+      } else if (ev.type === "done") {
+        let html = linkCites(md(ev.answer), ev.footnotes, turnId);
+        if (ev.footnotes.length) html += `<div class="notes">` + ev.footnotes.map(n =>
+          `[${n.n}] ${n.url ? `<a href="${n.url}" target="_blank" rel="noopener">${esc(n.ref)}</a>` : esc(n.ref)}${n.valid ? "" : " ⚠ unverified"}`).join("<br>") + `</div>`;
+        if (ev.invalid_citations.length) html += `<div class="warn">${ev.invalid_citations.length} citation(s) don't match the sources and were marked unverified.</div>`;
+        if (ev.unsupported_identifiers.length) html += `<div class="warn">Not found in any source (possible hallucination): ${ev.unsupported_identifiers.map(esc).join(", ")}</div>`;
+        if (ev.uncited) html += `<div class="warn">This answer has no citations, so treat it as unverified.</div>`;
+        html += `<div class="model">${esc(ev.model)}</div>`;
+        ansEl.innerHTML = html;
+        history.push({role: "user", content: question}, {role: "assistant", content: ev.raw});
+      } else if (ev.type === "error") {
+        ansEl.innerHTML = `<div class="warn">${esc(ev.message)}</div>`;
+      }
+    }
+  }
+}
+
+$("f").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const q = $("q").value.trim(); if (!q) return;
+  $("q").value = ""; $("send").disabled = true;
+  try { await ask(q); } finally { $("send").disabled = false; $("q").focus(); }
+});
+$("q").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("f").requestSubmit(); } });
+$("index").addEventListener("change", () => { try { localStorage.setItem("askcode.index", $("index").value); } catch (e) {} history = []; });
+$("clear").addEventListener("click", () => { history = []; $("log").innerHTML = '<p class="hint">New conversation.</p>'; });
+loadIndexes();
+</script>
+</body>
+</html>
